@@ -1,26 +1,26 @@
 import xml.etree.ElementTree as ET
-from pointpn.save_pn_feature import save_feature
-from pointpn.cossim import pointpn
-from pointnet2.main import pointnet2
-from pointnext.main import pointnext
-from ICP_RMSE import ICP
-from poseE.main import poseestimation
+# from pointpn.save_pn_feature import save_feature
+# from pointpn.cossim import pointpn
+# from pointnet2.main import pointnet2
+# from pointnext.main import pointnext
+# from ICP_RMSE import ICP
+# from poseE.main import poseestimation
 import os.path
-from tools import get_ground_truth,get_weld_info,WeldScene,image_save
-from evaluation import mean_metric
+# from tools import get_ground_truth,get_weld_info,WeldScene,image_save
+# from evaluation import mean_metric
 import open3d as o3d
 import numpy as np
 import time
 import shutil
 # from model_splitter import split_models
-from create_pc import split,convert
+# from create_pc import split,convert
 
 CURRENT_PATH = os.path.abspath(__file__)
 ROOT = os.path.dirname(CURRENT_PATH)
 # ROOT = os.path.dirname(BASE)
 
-from welding_seam_detect import welding_seam_detect
-from welding_seam_train import welding_seam_train,welding_seam_train_prepare,obj2txt,update_train_test_json
+from seam_files.welding_seam_detect import welding_seam_detect
+from seam_files.welding_seam_train import welding_seam_train,welding_seam_train_prepare,obj2txt,update_train_test_json
 
 
 def matching(data_folder,xml_file,model,dienst_number,save_image=False,auto_del=False):
@@ -177,6 +177,6 @@ if __name__ == "__main__":
     data_folder=os.path.join(ROOT,'data')
     xml='Reisch_origin.xml'
     model='pointnext'
-    dienst_number=62## 62 training_similarity;63 similarity; 61 pose estimation
+    dienst_number=65 ## 62 training_similarity;63 similarity; 61 pose estimation
 
     matching(data_folder, xml, model,dienst_number,save_image=False,auto_del=False)
