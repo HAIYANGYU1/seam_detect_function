@@ -44,7 +44,7 @@ def is_number(element):
 bag_labels = [4.0,5.0]
 
 DATA_PATH_DIR = "/data/ShapeNetPart/shapenetcore_partanno_segmentation_benchmark_v0_normal/02773838"
-CONFIG_PATH = "./cfgs/shapenetpart/pointnext-s.yaml"
+CONFIG_PATH = "/cfgs/shapenetpart/pointnext-s.yaml"
 
 
 def batched_bincount(x, dim, max_value):
